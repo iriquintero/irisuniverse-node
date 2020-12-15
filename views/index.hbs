@@ -1,0 +1,71 @@
+    <aside>
+        <div class="social-bar redes">
+            <a class="button flaticon-facebook" href="https://www.facebook.com/irisuniverse1" target="_blank"></a>
+            <a class="button flaticon-instagram"href="https://www.instagram.com/irisuniverse1/" target="_blank"></a>
+            <a class="button flaticon-youtube"href="#"></a>
+            <a class="button flaticon-pinterest-social-logo"href="https://ar.pinterest.com/irisuniverse1" target="_blank"></a>
+        </div>
+    </aside>
+    <main>
+        <div class="cycle-slideshow slider holder" 
+        data-cycle-fx="scrollHorz"
+        data-cycle-timeout="2000" data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom">
+            <div class="cycle-overlay"></div>
+                <img src="images/home-pattern/portada/imagen-1.jpg" alt="Patterns"
+                 data-cycle-title="Patterns/Illustrations"  data-cycle-desc ="" >
+                <img src="images/home-pattern/portada/imagen-2.jpg" alt="Patterns"
+                data-cycle-title="Patterns/Illustrations" data-cycle-desc ="">
+                <img src="images/home-pattern/portada/imagen-3.jpg" alt="Patterns"
+                data-cycle-title="Patterns/Illustrations" data-cycle-desc ="">
+                <img src="images/home-pattern/portada/imagen-4.jpg" alt="Patterns"
+                data-cycle-title="Patterns/Illustrations"data-cycle-desc ="" >
+        </div>
+        <div class="products holder">
+            <h2>Products</h2>
+            <div class="product">
+                <div class="productshop">
+                    <div class="box">
+                        <a href="https://society6.com/irisuniverse?curator=irisuniverse" target="_black"><h3>see more</h3></a>
+                    </div>
+                    <figure>
+                        <img src="images/home-pattern/products/society6.jpg" alt="throwpillow">
+                    </figure>   
+                    <h3>Throw Pillow</h3>
+                    <h4>Society6</h4>
+                </div>
+                <div class="productshop">
+                    <div class="box"><a href="https://irisuniverse.redbubble.com" target="_black"><h3>see more</h3></a>
+                    </div>
+                    <figure>
+                        <img src="images/home-pattern/products/redbbuble .jpg" alt="backpack">
+                    </figure>   
+                    <h3>Backpack</h3>
+                    <h4>Redbubble</h4>
+                </div>
+                <div class="productshop">
+                    <div class="box"><a href="https://iris-universe.flashcookie.com/" target="_blank"><h3>see more</h3></a>
+                    </div>
+                    <figure>
+                        <img src="images/home-pattern/products/flashcookie.jpg" alt="t-shirt">
+                    </figure>
+                    <h3>T-shirt</h3>
+                    <h4>Flashcookie</h4>
+                </div>
+            </div>
+        </div>
+        <div class="caseblog">
+            <div class="holder">
+                <h2>Laste From Blog</h2>
+                {{#each blog2}}
+                <h3>{{title}}</h3>
+                <h5 class="date">{{date}}</h5>
+                <div class="case">
+                    <img src="images/uploadimages/{{image}}" alt="">
+                    {{{body}}}<a href="blog">see more</a>{{/each}}
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/jquery.cycle2.min.js"></script>

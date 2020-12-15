@@ -1,0 +1,36 @@
+<main class="container">
+    <h2 class="text-center">NEW IMAGE</h2>
+    <hr>
+    <div class="row">
+        <div class="col-md4 mx-auto">
+            <form action="/admin/images/newimage" method="post" encType="multipart/form-data">
+                <div class="form-group">
+                    <label for="datepost">Profile Image</label>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input name="image" type="file" class="custom-file-input" id="inputGroupFile04"
+                                aria-describedby="inputGroupFileAddon04">
+                            <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="titleimage">Title</label>
+                    <input class="form-control" id="titleimage" rows="3" placeholder="Image title"
+                        name="title"/>
+                </div>
+                <div class="form-group">
+                    <label for="tagsimages">Tags</label>
+                    <textarea class="form-control" id="tagsimages" rows="3" placeholder="Tags describing the image..."
+                        name="tags"></textarea>
+                </div>
+                <button type="submit" class="btn btn-dark">Save</button>
+            </form>
+            {{#if error}}
+            <div class="alert alert-dark" role="alert">
+                {{message}}
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</main>

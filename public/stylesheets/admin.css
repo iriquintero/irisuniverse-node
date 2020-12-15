@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'caviar_dreamsregular';
+    src: url('../font/caviardreams-webfont.woff2') format('woff2'),
+         url('../font/caviardreams-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* font-family: 'Tajawal', sans-serif; */
+body{
+    font-family: 'caviar_dreamsregular';
+    font-size: 16px;
+    line-height: 20px;
+}
+h2{
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em ;
+    margin:0;
+    padding-top:10px;
+}
+h3{
+    font-size:1.8em;
+    line-height: 37px;
+}
+
+.container.login{
+    margin-top:50px;
+    height: 67vh;
+}
+
+.logoheader.admin{
+    margin-top:40px ;
+    text-align:center;
+    width: 100%;
+}
+
+div .alert{
+    margin-top:10px;
+}
+
+.item1{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+.navadmin{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    overflow: hidden;
+    margin-top:15px;
+    padding:0;
+}
+.navadmin li {
+    list-style: none;
+    margin:5px;
+}
+.navadmin li a{
+    text-decoration: none;
+    color:black;
+    font-weight: bold;
+}
+.navadmin li a:hover{
+    text-decoration: underline;
+}
+.navadmin li a.activo{
+    text-decoration: underline;
+}

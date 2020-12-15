@@ -1,0 +1,43 @@
+<main class="container">
+    <h2 class="text-center">EDIT IMAGE</h2>
+    <hr>
+    <div class="row">
+        <div class="col-md4 mx-auto">
+            <form action="/admin/images/editimage" method="post" encType="multipart/form-data">
+                <input type="hidden" value="{{gallery.id}}" name="id"/>
+                <div class="form-group">
+                    <label for="datepost">Profile Image</label>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input name="image" type="file" class="custom-file-input" id="inputGroupFile04"
+                                aria-describedby="inputGroupFileAddon04" value="{{gallery.image}}"/>
+                            <label class="custom-file-label" for="inputGroupFile04"></label>
+                        </div>
+                    </div>
+                     {{#if gallery.image}}
+                    <div>
+                        Current image: <img src="/images/gallery/uploadimagen/{{gallery.image}}" width="80" style="display:block;" />
+                    </div>
+                    {{/if}}
+                    <input type="hidden" name="image_old" value="{{gallery.image}}"/>
+                </div>
+                <div class="form-group">
+                    <label for="titleimage">Title</label>
+                    <input class="form-control" id="titleimage" rows="3" placeholder="Image title"
+                        name="title" value="{{gallery.title}} "/>
+                </div>
+                <div class="form-group">
+                    <label for="tagsimage">Tags</label>
+                    <textarea class="form-control" id="tagsimage" rows="3" placeholder="Tags describing the image..."
+                        name="tags">{{gallery.tags}} </textarea>
+                </div>
+                <button type="submit" class="btn btn-dark">Save</button>
+            </form>
+            {{#if error}}
+            <div class="alert alert-dark" role="alert">
+                {{message}}
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</main>

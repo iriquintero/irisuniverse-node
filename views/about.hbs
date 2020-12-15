@@ -1,0 +1,70 @@
+<aside>
+        <div class="social-bar redes">
+            <a class="button flaticon-facebook" href="https://www.facebook.com/irisuniverse1" target="_blank"></a>
+            <a class="button flaticon-instagram"href="https://www.instagram.com/irisuniverse1/" target="_blank"></a>
+            <a class="button flaticon-youtube"href="#"></a>
+            <a class="button flaticon-pinterest-social-logo"href="https://ar.pinterest.com/irisuniverse1" target="_blank"></a>
+        </div>
+</aside>        
+    <main>
+        <div class="about holder" data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom">
+            <div class="aboutme">
+                <img class="left" src="/images/about/about.jpg" alt="aboutme">
+                <h1>About me</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in enim nisl. Sed sit amet leo eget dui aliquet eleifend sed eget tortor. In iaculis consequat aliquet. Aliquam accumsan tempus mauris. Maecenas id tempus lacus. Praesent in eros ex. Sed id rhoncus justo, eget consectetur turpis. Donec eget nulla augue. Nam a sapien eros. Quisque congue molestie diam a efficitur. Pellentesque blandit volutpat magna, non tempus est egestas sed.</p>
+                <p class="centerspan" style="display: none;"><q></q></p>
+                <p>Integer placerat risus lectus, tempus iaculis est euismod et. Sed nisi odio, interdum vel viverra sodales, molestie sit amet odio. Etiam iaculis elementum mauris quis venenatis. Nullam id faucibus ipsum. Vestibulum posuere, magna id lacinia tristique, augue arcu efficitur tortor, sit amet viverra ante nisl non neque. Donec id volutpat eros. Proin rhoncus velit in arcu aliquet volutpat. Proin dapibus sapien leo, elementum finibus odio tincidunt ac. Mauris eleifend nisl non odio pellentesque accumsan. Cras turpis tellus, eleifend in tortor non, interdum vulputate eros. Duis sit amet aliquam nibh, eu pretium metus. Quisque fringilla laoreet mauris, ac interdum dolor tempor vitae. Quisque eget aliquet felis.</p>
+            </div>
+        </div>
+        <div class="about contact" data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom">
+            <div class="holder">
+                <h2>get in touch</h2>
+                <h4>Les't create something together!</h4>
+                <div class="contacts left">
+                    <h3>Contact details:</h3>
+                    <ul>
+                        <li class="button flaticon-phone-book"><span>(+54)1154854548.</span></li>
+                        <li class="button flaticon-email" ><span>irisuniverse1@gmail.com.</span></li>
+                        <li class="button flaticon-placeholder"><span>Argentina/Buenos Aires.</span></li>
+                    </ul>
+                </div> 
+                <div class="about contacts right">
+                    <form name="contact" action="/about/form-contact" method="post" class="formcontact">
+                        <section class="border name">
+                            <label for="yourname">Your name</label>
+                            <input type="text" name="yourname" id="yourname" required/>
+                        </section>
+                        <section class="border email">
+                            <label for="e-mail">E-mail</label>
+                            <input type="text" name="email" id="e-mail" required/>
+                        </section>
+                        <section class="border phone">
+                            <label for="yourphone">Phone</label>
+                            <input type="text" name="yourphone" id="yourphone"/>
+                        </section>
+                        <section class="border message">
+                            <label for="yourmessage">Message</label>
+                            <textarea name="yourmessage" id="yourmessage" required></textarea>
+                        </section>
+                        <section class="sending">
+                            <input type="submit" value="send"/>
+                          </section>
+                    </form>
+                    <p class="mensajecontact">{{mensaje}}</p>
+                </div>   
+            </div>    
+        </div>
+        <div class="about news holder" data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom">
+            <h2>Subscribe to my newsletter</h2>
+            <h4>Sign up to our newsletter and be the first to know about my latest news,
+                    special offers, events, and discounts.</h4>
+            <form name="newsletter" action="/about/form-newsletter" method="post" class="newsletter">
+                <input type="text" placeholder="E-mail" name="emailnewsletter" required>
+                <input type="submit" value="subscribe">
+            </form>
+            <p class="mensajecontact">{{mensaje2}}</p>
+        </div>
+    </main>

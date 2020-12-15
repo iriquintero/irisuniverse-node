@@ -1,0 +1,111 @@
+<main class="holder" data-aos="fade-up" data-aos-anchor-placement="-bottom">
+    <form action="/blog" method="get" class="search2">
+        <input class="qsearch2" name="q" {{#if q}} value="{{q}}" {{/if}} type="text" placeholder="Search...">
+        <div class="btnsearch2">
+            <button class="btn" type="submit">search</button>
+        </div>
+    </form>
+    <h1>Blog post</h1>
+    <div class="blog">
+        <section class="content">
+            {{#each blog}}
+            <div class="imgblog">
+                <img src="/images/uploadimages/{{image}}" alt="">
+            </div>
+            <div class="titleblog">
+                <div class="title1">
+                    <h3>{{title}}</h3>
+                    <h5>{{date}}</h5>
+                </div>
+                <div class="redes heart">
+                    <a class="button flaticon-heart-shape-silhouette" href=""></a>
+                </div>
+            </div>
+            <div class="postcontent">
+                <p>{{{body}}}</p>
+            </div>
+            <div class="share" style="display: none;">
+                <h4>Share this</h4>
+                <div class="redes share">
+                    <a class="button flaticon-twitter" href="#" target="_blank"></a>
+                    <a class="button flaticon-pinterest-social-logo" href="#" target="_blank"></a>
+                    <a class="button flaticon-facebook" href="#"></a>
+                    <a class="button flaticon-whatsapp" href="" target="_blank"></a>
+                    <a class="button flaticon-email" href="http://" target="_blank"></a>
+                </div>
+            </div>
+            {{/each}}
+            {{#if is_search}}
+            {{#unless blog.length}}
+            <h4>No results found for "<b>{{q}}</b>"</h4>
+            {{/unless}}
+            {{/if}}
+        </section>
+        <aside class="other">
+            <form action="/blog" method="get" class="search">
+                <input class="qsearch" name="q" {{#if q}} value="{{q}}" {{/if}} type="text" placeholder="Search...">
+                <div class="btnsearch">
+                    <button class="btn" type="submit">search</button>
+                </div>
+            </form>
+            <div class="recentpost">
+                <h3>recent post</h3>
+                {{#each blog3}}
+                <div class="post">
+                    <a href="/blog/select/{{id}}">
+                        <h4>{{title}}</h4>
+                    </a>
+                </div>
+                {{/each}}
+            </div>
+            <div class="newsblog">
+                <h3>newslatter</h3>
+                <h4>Enter your e-mail to get the latest</h4>
+                <form name="newslatter" action="/blog/form-newsletter" method="post" class="newsletter">
+                    <input type="text" placeholder="E-mail" name="emailnewsletter" required>
+                    <input type="submit" value="subscribe">
+                </form>
+                <p class="mensajecontact">{{mensaje3}}</p>
+            </div>
+        </aside>
+        <section class="comments" style="display: none;">
+            <h3>Comments</h3>
+            <div class="comment">
+                <h4>Petronila</h4>
+                <h5>Sep 11, 2020</h5>
+                <p><q>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex dolorum esse consectetur perferendis.
+                        Error quo cumque quisquam excepturi, illum exercitationem labore quos non. Ipsa eveniet,
+                        similique adipisci iusto deleniti voluptatum.</q></p>
+            </div>
+            <div class="comment">
+                <h4>Josefina</h4>
+                <h5>Oct 11, 2020</h5>
+                <p><q>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex dolorum esse consectetur perferendis.
+                        Error quo cumque quisquam excepturi, illum exercitationem labore quos non. Ipsa eveniet,
+                        similique adipisci iusto deleniti voluptatum.</q></p>
+            </div>
+        </section>
+        <section class="formcomment" style="display: none;">
+            <form name="yourcomment" action="/blog/form-comment" method="post" class="yourcomment">
+                <h3>Your comment</h3>
+                <div class="typetext">
+                    <section class="bordername">
+                        <label for="yourname">Your name</label>
+                        <input type="text" name="yourname" id="yourname" class="yourname" required />
+                    </section>
+                    <section class="borderemail">
+                        <label for="e-mail">E-mail</label>
+                        <input type="text" name="email" id="e-mail" class="email" required />
+                    </section>
+                </div>
+                <section class="bordermessage">
+                    <label for="yourmessage">Message</label>
+                    <textarea name="yourmessage" id="yourmessage" rows="5" cols="20" name="comment" required></textarea>
+                </section>
+                <section class="sending">
+                    <input type="submit" value="send" />
+                </section>
+            </form>
+        </section>
+    </div>
+</main>

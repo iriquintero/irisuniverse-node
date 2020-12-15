@@ -1,0 +1,34 @@
+<div class="container p-4 login" data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"> 
+    <div class="row">
+        <div class="col-md4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h2>Login</h2>
+                    <p class="text-center">Enter your username and password to continue</p> 
+                 </div> 
+                 <div class="card-body">
+                    <form action="/admin/login" method="post">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" aria-describedby="username" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Password1">Password</label>
+                            <input type="password" class="form-control" id="Password1" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-dark">Get in</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> 
+    {{#if error}}
+        <div class="alert alert-dark" role="alert">
+            Wrong username or password
+        </div>
+    {{/if}}
+</div>
+
+
+{{!-- <small class="form-text text-muted">Wrong username or password</small> --}}

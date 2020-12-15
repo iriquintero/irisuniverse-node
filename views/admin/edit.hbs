@@ -1,0 +1,45 @@
+<main class="container">
+    <h2 class="text-center">EDIT POST</h2>
+    <hr>
+    <div>
+        <form action="/admin/blog/edit" method="post" encType="multipart/form-data">
+            <input type="hidden" value="{{blog.id}}" name="id"></input>
+            <div class="form-group">
+                <label for="titlepost">Title</label>
+                <input type="text" class="form-control" id="title" name="title" value="{{blog.title}}"/>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="datepost">Date</label>
+                    <input type="date" class="form-control" id="datepost" placeholder="Post Date" name="date" value="{{blog.date}}"/>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputGroupFile04">Profile Image</label>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input name="image" type="file" class="custom-file-input" id="inputGroupFile04"
+                                aria-describedby="inputGroupFileAddon04" />
+                            <label class="custom-file-label" for="inputGroupFile04"></label>
+                        </div>
+                    </div>
+                    {{#if blog.image}}
+                    <div>
+                        Current image: <img src="/images/uploadimages/{{blog.image}}" width="80" style="display:block;" />
+                    </div>
+                    {{/if}}
+                    <input type="hidden" name="image_old" value="{{blog.image}}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="bodypost">Body</label>
+                <textarea class="form-control" id="bodypost" rows="3" name="body">{{{blog.body}}}</textarea>
+            </div>
+            <button type="submit" class="btn btn-dark">Save</button>
+        </form>
+        {{#if error}}
+        <div class="alert alert-dark" role="alert">
+            {{message}}
+        </div>
+        {{/if}}
+    </div>
+</main>

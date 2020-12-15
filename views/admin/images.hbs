@@ -1,0 +1,73 @@
+<div>
+    <ul class="navadmin">
+        <li><a href="/admin/blog" class="{{#if isPosts}}activo{{/if}}">Posts</a></li>
+        <li><a href="/admin/images" class="{{#if isImages}}activo{{/if}}">Images</a></li>
+    </ul>
+    <hr>
+</div>
+<main class="container-md">
+    <div class="row">
+        <div class="col item1">
+            <p>Hi, {{username}} </p>
+            <a href="/admin/login/logout" class="btn btn-sm btn-outline-dark">Log out <i class="fa fa-sign-in"
+                    aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <hr>
+    <h2 class="text-center">IMAGE MANAGEMENT</h2>
+    <hr>
+    <div class="row">
+        <div class="col-6">
+            <h3>List image</h3>
+        </div>
+        <div class=" col-4">
+            <form action="/admin/images" method="get" class="input-group mb-3 text-right">
+                <input name="q" {{#if q}} value="{{q}}" {{/if}} type="text" class="form-control" placeholder="Search..."
+                    aria-label="search" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fa fa-search"
+                            aria-hidden="true"></i></button>
+                </div>
+            </form>
+        </div>
+        <div class="col-2 text-right">
+            <a href="/admin/images/newimage" class="btn btn-sm btn-outline-success"><i class="fa fa-plus"
+                    aria-hidden="true"></i> New image</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Tags</th>
+                        <th class="text-center" scope="col">Edition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each gallery}}
+                    <tr>
+                        <th scope="row">{{id}}</th>
+                        <td>{{image}}</td>
+                        <td>{{title}}</td>
+                        <td>{{tags}}</td>
+                        <td class="text-center"><a href="/admin/images/editimage/{{id}}" title="edit"
+                                class="btn btn-sm btn-outline-dark"><i class="fa fa-edit fa-2x"
+                                    aria-hidden="true"></i></a>
+                            <a href="/admin/images/delete/{{id}}" title="delete" class="btn btn-sm btn-outline-dark"> <i
+                                    class="fa fa-trash fa-2x" aria-hidden="true"></i></a></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            {{#if is_search}}
+            {{#unless gallery.length}}
+            <p>results not found "<b>{{q}}</b>"</p>
+            {{/unless}}
+            {{/if}}
+        </div>
+    </div>
+</main>
