@@ -1,6 +1,8 @@
 # irisuniverse-node
 
 Irisuniverse website con nodejs y mysql
+Es una web que sirve como porfolio para diseñadores/ ilustradores,
+contiene como páginas: home/about/gallery/shop/blog/contacto.
 
 Para usar el repositorio:
 
